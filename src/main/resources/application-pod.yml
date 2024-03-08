@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: vhr
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://185.242.232.253:3306/vhr?characterEncoding=utf-8
+    username: ayun
+    password: ayun1201
+
+  security:
+    jwt:
+      key: asdxas21dasdj125r2131klasd
+      expire: 7
+    filter:
+      order: -100
+
+  #Redis
+  data:
+    redis:
+      host: 185.242.232.253
+      port: 6379
+      password: ayunRedis
+      database: 0
+      jedis:
+        pool:
+          max-active: 8
+          max-idle: 8
+          max-wait: 18000
+          min-idle: 0
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #sql日志
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      logic-delete-field: delFlag
+
+
+server:
+  port: 4000
